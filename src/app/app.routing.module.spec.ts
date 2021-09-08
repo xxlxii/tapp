@@ -11,8 +11,14 @@ describe('Router: App', () => {
   let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(() => {
+    // -----------------------------------------------------------------------------------------------------
+    // Thanks to https://stackoverflow.com/users/1486848/shampoosham
+    // In solving the issue described in the following link:
+    //   https://stackoverflow.com/questions/69106612/angular-unit-test-the-pipe-currency-could-not-be-found
+    // AppComponent not in declarations as it is being created through TestBed.createComponent(AppComponent)
+    // -----------------------------------------------------------------------------------------------------
+
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
       imports: [
         RouterTestingModule.withRoutes(routes)
       ],
